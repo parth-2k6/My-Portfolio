@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parth Tiwari - Portfolio</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Flowbite CDN -->
+  <script src="https://unpkg.com/flowbite@2.2.0/dist/flowbite.min.js"></script>
+
+  <!-- SwiperJS CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+  <!-- Navbar -->
+  <header class="nav-head fixed z-[9999] left-1/2 -translate-x-1/2 
+  bg-[rgba(33,31,35,0.35)] backdrop-blur-[20px] rounded-full 
+  px-8 py-5 font-medium max-w-[325px] xl:max-w-[620px] pt-[1.75rem] h-20 items-center 
+  xl:top-4">
+
+<nav>
+  <ul class="flex items-center justify-center gap-10">
+    <li class="text-purple-300">
+      <a href="#home" class="text-purple-300">Home</a>
+    </li>
+    <li>
+      <a href="#experience" class="text-gray-300 hover:brightness-90">Experience</a>
+    </li>
+    <li>
+      <a href="#education" class="text-gray-300 hover:brightness-90">Education</a>
+    </li>
+
+    <!-- Social Icons -->
+    <span class="hidden xl:flex items-center gap-4">
+      <a target="_blank" href="https://github.com/parth-2k6">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KCTxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMiAyQTEwIDEwIDAgMCAwIDIgMTJjMCA0LjQyIDIuODcgOC4xNyA2Ljg0IDkuNWMuNS4wOC42Ni0uMjMuNjYtLjV2LTEuNjljLTIuNzcuNi0zLjM2LTEuMzQtMy4zNi0xLjM0Yy0uNDYtMS4xNi0xLjExLTEuNDctMS4xMS0xLjQ3Yy0uOTEtLjYyLjA3LS42LjA3LS42YzEgLjA3IDEuNTMgMS4wMyAxLjUzIDEuMDNjLjg3IDEuNTIgMi4zNCAxLjA3IDIuOTEuODNjLjA5LS42NS4zNS0xLjA5LjYzLTEuMzRjLTIuMjItLjI1LTQuNTUtMS4xMS00LjU1LTQuOTJjMC0xLjExLjM4LTIgMS4wMy0yLjcxYy0uMS0uMjUtLjQ1LTEuMjkuMS0yLjY0YzAgMCAuODQtLjI3IDIuNzUgMS4wMmMuNzktLjIyIDEuNjUtLjMzIDIuNS0uMzNzMS43MS4xMSAyLjUuMzNjMS45MS0xLjI5IDIuNzUtMS4wMiAyLjc1LTEuMDJjLjU1IDEuMzUuMiAyLjM5LjEgMi42NGMuNjUuNzEgMS4wMyAxLjYgMS4wMyAyLjcxYzAgMy44Mi0yLjM0IDQuNjYtNC41NyA0LjkxYy4zNi4zMS42OS45Mi42OSAxLjg1VjIxYzAgLjI3LjE2LjU5LjY3LjVDMTkuMTQgMjAuMTYgMjIgMTYuNDIgMjIgMTJBMTAgMTAgMCAwIDAgMTIgMiIgLz4KPC9zdmc+" alt="GitHub" width="24" height="25" loading="lazy">
+      </a>
+      <a target="_blank" href="https://www.linkedin.com/in/parth-tiwari-b38b88342/">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KCTxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xNy4zMDMgMi4yNUg2LjY5N0E0LjQ0NyA0LjQ0NyAwIDAgMCAyLjI1IDYuNjk3djEwLjYwNmE0LjQ0NyA0LjQ0NyAwIDAgMCA0LjQ0NyA0LjQ0N2gxMC42MDZhNC40NDcgNC40NDcgMCAwIDAgNC40NDctNC40NDdWNi42OTdhNC40NDcgNC40NDcgMCAwIDAtNC40NDctNC40NDdtLTguNDYgMTUuNzQyYS40LjQgMCAwIDEtLjQuNDIzaC0xLjc4YS40MS40MSAwIDAgMS0uNC0uNDEyVjEwLjZhLjQuNCAwIDAgMSAuNC0uNDExaDEuNzhhLjQuNCAwIDAgMSAuNC40MTF6TTcuNTIgOC42MzJhMS40NjcgMS40NjcgMCAxIDEgLjAyMi0yLjkzNUExLjQ2NyAxLjQ2NyAwIDAgMSA3LjUyIDguNjNtMTAuODE3IDkuMzVhLjM5LjM5IDAgMCAxLS4zNzguMzg4SDE2LjA4YS4zOS4zOSAwIDAgMS0uMzc4LS4zODl2LTMuNDI0YzAtLjUxMS4xNTYtMi4yMjMtMS4zNTYtMi4yMjNjLTEuMTc5IDAtMS40MTIgMS4yLTEuNDU3IDEuNzM0djMuOTkxYS4zOS4zOSAwIDAgMS0uMzc4LjM5aC0xLjgyM2EuMzkuMzkgMCAwIDEtLjM4OS0uMzl2LTcuNDkzYS4zOS4zOSAwIDAgMSAuMzktLjM3OGgxLjgyMmEuMzkuMzkgMCAwIDEgLjM5LjM3OHYuNjQ1YTIuNTkgMi41OSAwIDAgMSAyLjQzNC0xLjExMmMzLjAzNSAwIDMuMDI0IDIuODM1IDMuMDI0IDQuNDQ3eiIgLz4KPC9zdmc+" alt="LinkedIn" width="24" height="25" loading="lazy">
+      </a>
+    </span>
+  </ul>
+</nav>
+</header>
+
+<body class="bg-[#0e1014] text-white">
+
+  <!-- Hero Section -->
+  <section id="home" class="section hero" aria-label="home">
+    <div class="container" bis_skin_checked="1">
+
+      <div class="hero-content" bis_skin_checked="1">
+
+        <h1 class="h1 hero-title">Parth Tiwari</h1>
+
+        <p class="hero-subtitle">
+          Student At PSIT,Kanpur
+        </p>
+
+        <div class="hero-banner" bis_skin_checked="1">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhfkc617toaTYNEGW5l2GVZ1lgO_IyWSglyQtw2_Ezr6cQDuSzHjINeB8m2pL_TPwzl4uyXV9VMLmsMVYTbB9ZfZi5PSpevBQA-3VaWH6fQN5xXd5Ewz_zZbpCsikVR4jSoJk885mYtn5Lkzn7fSuTYXPpw1g4QqdLYE5FmJUfEJ3ovh8PYYSaeqYNqZQGL/s1600/1737883649957.jpg" width="800" height="800" alt="Parth Tiwari" class="w-full">
+        </div>
+
+        <p class="section-text">
+            I’m a B.Tech student in Computer Science and Artificial Intelligence at PSIT, passionate about technology, AI, and problem-solving. I’m eager to explore innovative solutions and continuously grow in the tech industry, aiming to contribute to impactful projects and real-world applications.
+        </p>
+
+        <a href="#" class="btn has-before">
+          <span class="span">Download CV</span>
+
+          <ion-icon name="download-outline" aria-hidden="true" role="img" class="md hydrated"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
+                <path d="M8 22h8c2.828 0 4.243 0 5.121-.878C22 20.242 22 18.829 22 16v-1c0-2.828 0-4.242-.879-5.121c-.768-.768-1.946-.865-4.121-.877m-10 0c-2.175.012-3.353.109-4.121.877C2 10.758 2 12.172 2 15v1c0 2.829 0 4.243.879 5.122c.3.3.662.497 1.121.627" />
+                <path stroke-linejoin="round" d="M12 2v13m0 0l-3-3.5m3 3.5l3-3.5" />
+            </g>
+        </svg></ion-icon>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <article class="resume active" data-page="resume">
+
+    <header>
+      <h2 class="text-5xl md:text-8xl text-center font-light mb-12">Resume</h2>
+    </header>
+
+    <section id="education" class="timeline">
+
+      <div class="title-wrapper" bis_skin_checked="1">
+        <div class="icon-box" bis_skin_checked="1">
+          <ion-icon name="book-outline" role="img" class="md hydrated" aria-label="book outline"></ion-icon>
+        </div>
+
+        <h3 class="text-3xl md:text-5xl text-center font-light mb-12">Education</h3>
+      </div>
+
+        <!-- Pranveer Singh Institute Of Technology -->
+  <div class="border border-gray-800 rounded-lg p-6 mb-[2rem]">
+    <h2 class="text-2xl md:text-4xl font-semibold">Pranveer Singh Institute Of Technology</h2>
+    <p class="text-purple-400 text-xl md:text-3xl  mt-2">
+       Bachelors in Computer Science And Engineering ( Artificial Intelligence )
+    </p>
+    <p class="mt-4 text-1xl md:text-3xl text-gray-400">Sept 2024 — Present</p>
+  </div>
+
+     <!-- Mercy Memorial School -->
+     <div class="border border-gray-800 rounded-lg p-6 mb-[2rem]">
+      <h2 class="text-2xl md:text-4xl font-semibold">Mercy Memorial School</h2>
+      <p class="text-purple-400 text-xl md:text-3xl  mt-2">
+       High School And Class 12th 
+      </p>
+      <p class="mt-4 text-1xl md:text-3xl text-gray-400">2012 — 2024</p>
+    </div>
+
+    </section>
+
+    <section id="experience" class="timeline">
+
+      <div class="title-wrapper" bis_skin_checked="1">
+        <div class="icon-box" bis_skin_checked="1">
+          <ion-icon name="book-outline" role="img" class="md hydrated" aria-label="book outline"></ion-icon>
+        </div>
+
+        <h3 class="h3 text-3xl md:text-5xl text-center font-light mb-12">Experience</h3>
+      </div>
+
+         <!-- TechExpo 2024 -->
+  <div class="border border-gray-800 rounded-lg p-6 mb-[2rem]">
+    <h2 class="text-2xl md:text-4xl font-semibold">TechExpo 2024</h2>
+    <p class="text-purple-400 text-xl md:text-3xl  mt-2">
+    Technical Event At Pranveer Singh Institute Of Technology , Kanpur 
+    </p>
+    <p class="mt-4 text-1xl md:text-3xl text-gray-400">Nov 2024</p>
+  </div>
+
+ 
+
+    </section>
+
+
+ <!-- Skills -->
+<div class="p-8 text-white py-20"> 
+  <h2 class="text-4xl md:text-6xl lg:text-7xl text-center font-light mb-16">
+    The technologies I’ve <br class="hidden md:block"> been using...
+  </h2>
+<!-- Desktop View -->
+<div class="hidden md:flex justify-center gap-16 mt-10">
+  
+  <!-- Languages -->
+  <div class="border border-gray-700 rounded-2xl p-10 w-96 shadow-lg">
+    <h3 class="mb-6 text-3xl font-semibold text-gray-300 tracking-wide">Languages</h3>
+    <div class="space-y-5">
+      <div class="flex items-center gap-4 text-xl text-gray-200">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/c/c-original.svg" class="w-10 h-10"> 
+        <span>C</span>
+      </div>
+      <div class="flex items-center gap-4 text-xl text-gray-200">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/java/java-original.svg" class="w-10 h-10"> 
+        <span>Java</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Front-end Engineering Design -->
+  <div class="border border-gray-700 rounded-2xl p-10 w-96 shadow-lg">
+    <h3 class="mb-6 text-3xl font-semibold text-gray-300 tracking-wide">Front-end Engineering</h3>
+    <div class="space-y-5">
+      <div class="flex items-center gap-4 text-xl text-gray-200">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/html5/html5-original.svg" class="w-10 h-10"> 
+        <span>HTML</span>
+      </div>
+      <div class="flex items-center gap-4 text-xl text-gray-200">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/tailwindcss/tailwindcss-original.svg" class="w-10 h-10"> 
+        <span>Tailwind CSS</span>
+      </div>
+      <div class="flex items-center gap-4 text-xl text-gray-200">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/javascript/javascript-original.svg" class="w-10 h-10"> 
+        <span>JavaScript</span>
+      </div>
+      <div class="flex items-center gap-4 text-xl text-gray-200">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="w-10 h-10"> 
+        <span>Figma</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+  
+    <!-- Mobile Swiper View -->
+    <div class="block md:hidden">
+      <div class="swiper tech-swiper">
+        <div class="swiper-wrapper gap-[10px]">
+          <!-- Languages Slide -->
+          <div class="swiper-slide border border-gray-600 rounded-lg p-6">
+            <h3 class="mb-4 text-sm text-gray-400">Languages</h3>
+            <div class="flex items-center gap-3 mb-4">
+              <img src="https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/c/c-original.svg" class="w-6 h-6"> C 
+            </div>
+            <div class="flex items-center gap-3">
+              <img src="https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/java/java-original.svg" class="w-6 h-6"> Java
+                </div>
+          </div>
+  
+          <!-- Front-end Slide -->
+          <div class="swiper-slide border border-gray-600 rounded-lg p-6">
+            <h3 class="mb-4 text-sm text-gray-400">Front-end Engineering Design</h3>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3"><img src="https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/html5/html5-original.svg" class="w-6 h-6"> HTML</div>
+              <div class="flex items-center gap-3"><img src="https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/tailwindcss/tailwindcss-original.svg" class="w-6 h-6"> Tailwind CSS</div>
+              <div class="flex items-center gap-3"><img src="https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/javascript/javascript-original.svg" class="w-6 h-6"> Javascript</div>
+              <div class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="w-6 h-6"> Figma</div>    
+            </div>
+          </div>
+  
+        </div>
+        <div class="swiper-pagination mt-6"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w-full bg-[#111] rounded-3xl p-4 flex justify-between items-center">
+    <!-- Follow Me Text -->
+    <span class="text-gray-400 text-lg pl-6 md:text-3xl">Contact me: pxrth81@gmail.com</span>
+<!-- Social Icons -->
+<div class="flex space-x-4 pr-6">
+  <a href="https://github.com/parth-2k6" class="text-purple-400 hover:text-purple-300 w-6 h-6 md:w-[3.5rem] md:h-[3.5rem]">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.173c-3.338.726-4.033-1.416-4.033-1.416-.547-1.393-1.337-1.766-1.337-1.766-1.091-.745.082-.729.082-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.835 2.807 1.304 3.492.997.108-.775.418-1.304.76-1.604-2.665-.3-5.466-1.332-5.466-5.93 0-1.312.468-2.38 1.236-3.22-.124-.302-.535-1.522.117-3.17 0 0 1.007-.322 3.3 1.23a11.49 11.49 0 013-.404c1.02.005 2.042.137 3 .404 2.292-1.552 3.297-1.23 3.297-1.23.653 1.648.242 2.868.12 3.17.77.84 1.233 1.908 1.233 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.81 1.103.81 2.222v3.293c0 .322.217.694.825.577C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+      </svg>
+  </a>
+
+  <a href="https://www.linkedin.com/in/parth-tiwari-b38b88342/" class="text-purple-400 hover:text-purple-300 w-6 h-6 md:w-[3.5rem] md:h-[3.5rem]">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.792-1.75-1.768 0-.976.784-1.768 1.75-1.768s1.75.792 1.75 1.768c0 .976-.784 1.768-1.75 1.768zm13.5 11.268h-3v-5.5c0-3.5-4-3.23-4 0v5.5h-3v-10h3v1.68c1.396-2.586 7-2.777 7 2.48v5.84z"/>
+      </svg>
+  </a>
+</div>
+
+    </div>
+</footer>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navLinks = document.querySelectorAll('nav ul li a');
+      const currentUrl = window.location.pathname;
+  
+     
+      navLinks.forEach(link => {
+       
+        if (link.getAttribute('href') === currentUrl) {
+          link.classList.add('text-purple-300');
+        } else {
+          link.classList.remove('text-purple-300');
+          link.classList.add('text-gray-300', 'hover:brightness-90');
+        }
+      });
+  
+     
+      const internalLinks = document.querySelectorAll('a[href^="#"]');
+      internalLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- SwiperJS JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.tech-swiper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>
+  
+</body>
+
+
+</html>
